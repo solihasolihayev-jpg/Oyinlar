@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="uz">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090d25"><title>EDUVERSE 3D</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="bg-orb orb1"></div><div class="bg-orb orb2"></div>
+<header><div class="brand"><span class="brand-icon">✦</span><span>EDUVERSE <b>3D</b></span></div><div class="live"><i></i> LIVE LEARNING</div></header>
+<main>
+<section id="home" class="hero">
+  <div class="eyebrow">✧ KELAJAK UNIVERSITETI</div><h1>Bilimni <span>o‘yinga</span> aylantir.</h1><p class="subtitle">Do‘stlaring bilan bellash, bilimlaringni sinab ko‘r va EDUVERSE olamida chempion bo‘l.</p>
+  <div class="join-card"><label for="playerName">Taxallusingiz</label><input id="playerName" maxlength="24" placeholder="Masalan: ZukkoTalaba" value=""><div class="form-row"><button id="createBtn" class="primary">✦ Xona yaratish</button><div class="join-inline"><input id="roomCode" maxlength="6" placeholder="XONA KODI"><button id="joinBtn" class="secondary">Qo‘shilish ↗</button></div></div><div id="notice" role="status"></div></div>
+  <div class="stats"><div><b>40</b><span>o‘yinchi / xona</span></div><div><b>20</b><span>interaktiv rejim</span></div><div><b>∞</b><span>bilim va zavq</span></div></div>
+</section>
+<section id="lobby" class="hidden">
+  <div class="section-head"><div><div class="eyebrow">MULTIPLAYER LOBBY</div><h2>O‘yin xonasi</h2></div><div class="room-code-box">XONA KODI <strong id="currentCode">------</strong><button id="copyCode">Nusxalash</button></div></div>
+  <div class="lobby-grid"><div class="panel game-panel"><h3>O‘yin rejimini tanlang</h3><div id="games" class="games-grid"></div><div class="question-editor"><h3>O‘z savollaringiz</h3><p>Har bir qatorda savol va 4 ta javob yozing. To‘g‘ri javob raqami 1–4.</p><textarea id="questionData" rows="5" placeholder="Savol? | Javob A | Javob B | Javob C | Javob D | 2"></textarea><button id="addQuestion" class="secondary">Savollarni qo‘llash</button><span id="questionStatus"></span></div><button id="startBtn" class="primary full">▶ O‘yinni boshlash</button></div>
+  <div class="panel players-panel"><div class="panel-title"><h3>Ishtirokchilar</h3><span id="playerCount" class="pill">1 / 40</span></div><div id="playerList"></div><div class="hint">🔗 Do‘stlaringizga xona kodini yuboring.</div><div id="hostTools"><button id="pauseBtn" class="secondary full">Ⅱ Pauza</button></div></div></div>
+</section>
+<section id="arena" class="hidden">
+  <div class="arena-top"><button id="backLobby" class="secondary">← Lobby</button><span id="arenaGame">KNOWLEDGE RACE</span><span id="roundLabel">1 / 3</span></div>
+  <div class="scene" id="scene"><div class="planet p1"></div><div class="planet p2"></div><div class="track"></div><div class="avatar-figure">🧑‍🚀</div><div class="scene-caption" id="sceneCaption">READY PLAYER ONE</div></div>
+  <div class="quiz-layout"><div class="panel quiz-panel"><div class="timer-line"><span id="topic">UMUMIY</span><span id="timer">20s</span></div><div class="progress"><div id="progressBar"></div></div><h2 id="questionText">Savol yuklanmoqda...</h2><div id="answerGrid" class="answers"></div><div id="feedback" role="status"></div></div><div class="panel scoreboard"><h3>🏆 Jonli reyting</h3><div id="leaderboard"></div></div></div>
+</section>
+<section id="results" class="hidden"><div class="results-card panel"><div class="eyebrow">SESSION COMPLETE</div><div class="trophy">🏆</div><h2>Bilimlar g‘oliblari</h2><p>Bugungi natijalar</p><div id="finalResults"></div><button id="againBtn" class="primary">Yana o‘ynash ↻</button></div></section>
+</main><footer>EDUVERSE 3D <span>•</span> Ta’lim, raqobat va hamkorlik</footer>
+<script src="/socket.io/socket.io.js"></script><script src="/app.js"></script>
+</body></html>
